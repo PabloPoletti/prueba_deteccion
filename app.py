@@ -17,7 +17,8 @@ st.write("The full github code is [here](https://github.com/PabloPoletti/prueba_
 
 st.sidebar.title("Configurations")
 with st.sidebar:
-    confi = st.slider('Confidence Level', 0, 1, 0.25)
+    confi = st.slider('Confidence Level', 0.00, 1.00, 0.25)
+
 
 ########################################################################
 
