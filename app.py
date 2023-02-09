@@ -65,8 +65,8 @@ def plot_bboxes(results, frame):
     # Annotate and display frame
     frame = box_annotator.annotate(frame=frame, detections=detections, labels=labels)
     frame = np.fliplr(frame)
-    detecta = []
-    detecta.append(detections)
+    #detecta = []
+    #detecta.append(detections)
     detecta2 = []
     detecta2.append(labels)
 
@@ -94,6 +94,6 @@ webrtc_streamer(
     video_processor_factory=VideoProcessor,
     async_processing=True,
 )
-st.write(detecta)
+#st.write(detecta)
 st.write(detecta2)
 
