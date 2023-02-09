@@ -68,8 +68,8 @@ def plot_bboxes(results, frame):
     frame = np.fliplr(frame)
     #detecta = []
     #detecta.append(detections)
-    detecta2 = []
-    detecta2.append(labels)
+    #detecta2 = []
+    #detecta2.append(labels)
 
 
     return frame
@@ -96,6 +96,6 @@ webrtc_streamer(
     async_processing=True,
 )
 #st.write(detecta)
-df = pd.DataFrame(detecta2)
-st.write(df)
+#df = pd.DataFrame(detecta2)
+#st.write(df)
 
