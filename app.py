@@ -12,7 +12,7 @@ from supervision.tools.detections import Detections, BoxAnnotator
 
 
 st.title('DEMO: Object detection using YOLOv8 with COCO dataset.')
-st.write("The full github code is [here](https://github.com/mariotsato/YOLOv8_object_detection_streamlit)")
+st.write("The full github code is [here](https://github.com/PabloPoletti/prueba_deteccion)")
 
 ########################################################################
 
@@ -88,4 +88,5 @@ webrtc_streamer(
     video_processor_factory=VideoProcessor,
     async_processing=True,
 )
+st.write(detections, labels)
 
