@@ -25,7 +25,7 @@ device = 'cuda' if torch.cuda.is_available() else 'cpu'
 print("Using Device: ", device)
 
 #declaring the model
-model = YOLO("yolov8m.pt")  # load a pretrained YOLOv8n model
+model = YOLO("yolov8n.pt")  # load a pretrained YOLOv8n model
 model.fuse()
 
 #import the class names    
