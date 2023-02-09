@@ -38,7 +38,7 @@ RTC_CONFIGURATION = RTCConfiguration(
 
 
 def predict(frame):
-    results = model(frame)
+    results = model(frame, conf=0.25)
     return results
 
 
