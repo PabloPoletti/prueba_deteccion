@@ -15,6 +15,10 @@ from supervision.tools.detections import Detections, BoxAnnotator
 st.title('DEMO: Object detection using YOLOv8 with COCO dataset.')
 st.write("The full github code is [here](https://github.com/PabloPoletti/prueba_deteccion)")
 
+st.sidebar.title("Configurations")
+with st.sidebar:
+    confi = st.slider('Confidence Level', 0, 1, 0.25)
+
 ########################################################################
 
 #define gpu or cpu
@@ -38,7 +42,7 @@ RTC_CONFIGURATION = RTCConfiguration(
 
 
 def predict(frame):
-    results = model(frame, conf=0.5)
+    results = model(frame, conf=confi)
     return results
 
 
