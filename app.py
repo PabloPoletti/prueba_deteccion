@@ -1,10 +1,8 @@
-
 import streamlit as st
 from streamlit_webrtc import webrtc_streamer, WebRtcMode, RTCConfiguration
 #import cv2
 import av #strealing video library
 import numpy as np
-import pandas as pd
 import torch
 from time import time
 from ultralytics import YOLO
@@ -42,6 +40,7 @@ RTC_CONFIGURATION = RTCConfiguration(
 
 
 
+
 def predict(frame):
     results = model(frame, conf=confi)
     return results
@@ -71,12 +70,6 @@ def plot_bboxes(results, frame):
     # Annotate and display frame
     frame = box_annotator.annotate(frame=frame, detections=detections, labels=labels)
     frame = np.fliplr(frame)
-    #detecta = []
-    #detecta.append(detections)
-    #detecta2 = []
-    #detecta2.append(labels)
-
-
     return frame
 
 
@@ -100,8 +93,5 @@ webrtc_streamer(
     video_processor_factory=VideoProcessor,
     async_processing=True,
 )
-#st.write(detecta)
-#df = pd.DataFrame(detecta2)
-#st.write(df)
 
 #st.write("The full github code is [here](https://github.com/PabloPoletti/prueba_deteccion)")
