@@ -12,7 +12,7 @@ from supervision.draw.color import ColorPalette
 from supervision.tools.detections import Detections, BoxAnnotator
 
 
-st.title('Object Detection Example using YOLOv8m with COCO dataset (80 Classes)')
+st.title('Object Detection Example using YOLOv8 (80 Classes)')
 
 
 st.sidebar.title("Configurations")
