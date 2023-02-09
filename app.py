@@ -60,7 +60,7 @@ def plot_bboxes(results, frame):
                 class_id=results[0].boxes.cls.cpu().numpy().astype(int),
                 )
     # Format custom labels
-    labels = [f"{CLASS_NAMES_DICT[class_id]} {confidence:0.5f}"
+    labels = [f"{CLASS_NAMES_DICT[class_id]} {confidence:0.2f}"
     for _, confidence, class_id, tracker_id
     in detections]
     # Annotate and display frame
