@@ -25,7 +25,7 @@ device = 'cuda' if torch.cuda.is_available() else 'cpu'
 print("Using Device: ", device)
 
 #declaring the model
-@st.cache
+@st.cache(allow_output_mutation=True)
 def load_model():
     return YOLO("yolov8n.pt")
 
