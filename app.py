@@ -12,7 +12,7 @@ from supervision.draw.color import ColorPalette
 from supervision.tools.detections import Detections, BoxAnnotator
 
 
-st.title('Object detection using YOLOv8 with COCO dataset (80 Classes).')
+st.title('Object Detection Example using YOLOv8m with COCO dataset (80 Classes)')
 
 
 st.sidebar.title("Configurations")
@@ -104,4 +104,4 @@ webrtc_streamer(
 #df = pd.DataFrame(detecta2)
 #st.write(df)
 
-st.write("The full github code is [here](https://github.com/PabloPoletti/prueba_deteccion)")
+#st.write("The full github code is [here](https://github.com/PabloPoletti/prueba_deteccion)")
