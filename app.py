@@ -4,6 +4,7 @@ from streamlit_webrtc import webrtc_streamer, WebRtcMode, RTCConfiguration
 #import cv2
 import av #strealing video library
 import numpy as np
+import pandas as pd
 import torch
 from time import time
 from ultralytics import YOLO
@@ -95,5 +96,6 @@ webrtc_streamer(
     async_processing=True,
 )
 #st.write(detecta)
-st.write(detecta2)
+df = pd.DataFrame(detecta2)
+st.write(df)
 
