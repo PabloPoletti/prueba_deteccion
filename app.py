@@ -24,10 +24,10 @@ with st.sidebar:
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 print("Using Device: ", device)
 
-#declaring the model
+#declaring the model (Use cache for reduce rss computational of Streamlit)
 @st.cache(allow_output_mutation=True)
 def load_model():
-    return YOLO("yolov8n.pt")
+    return YOLO("yolov8n.pt") # Change to Nano Version, for reduce rss use
 
 #model = YOLO("yolov8n.pt")  # load a pretrained YOLOv8n model
 model = load_model()
@@ -43,8 +43,10 @@ box_annotator = BoxAnnotator(color=ColorPalette(), thickness=2, text_thickness=2
 RTC_CONFIGURATION = RTCConfiguration(
     {"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]})
 
-
-
+with st.sidebar:
+    option = st.selectbox(
+        'Select Label Languaje',
+        ('English', 'Spanish'))
 
 def predict(frame):
     results = model(frame, conf=confi)
