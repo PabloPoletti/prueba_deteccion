@@ -43,10 +43,27 @@ box_annotator = BoxAnnotator(color=ColorPalette(), thickness=2, text_thickness=2
 RTC_CONFIGURATION = RTCConfiguration(
     {"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]})
 
+dict_esp = {0: 'persona',1: 'bicicleta',2: 'coche',3: 'motocicleta',4: 'avión',5: 'autobús',6: 'tren',7: 'camión',8: 'barco',9: 'semáforo',
+10: 'boca de incendios',11: 'señal de alto',12: 'parquímetro',13: 'banco',14: 'pájaro',15: 'gato',16: 'perro',17: 'caballo',18: 'oveja',
+19: 'vaca',20: 'elefante',21: 'oso',22: 'cebra',23: 'jirafa',24: 'mochila',25: 'paraguas',26: 'bolso',27: 'corbata',28: 'maleta',
+29: 'frisbee',30: 'esquís',31: 'tabla de snowboard',32: 'pelota deportiva',33: 'cometa',34: 'bate de béisbol',35: 'guante de béisbol',
+36: 'monopatín',37: 'tabla de surf',38: 'raqueta de tenis',39: 'botella',40: 'copa de vino',41: 'taza',42: 'tenedor',43: 'cuchillo', 
+44: 'cuchara',45: 'cuenco',46: 'plátano',47: 'manzana',48: 'sándwich',49: 'naranja',50: 'brócoli',51: 'zanahoria',52: 'perro caliente',
+53: 'pizza',54: 'rosquilla',55: 'pastel',56: 'silla',57: 'sofá', 58: 'planta en maceta',59: 'cama',60: 'mesa de comedor',61: 'baño',
+62: 'televisión',63: 'portátil',64: 'ratón',65: 'remoto',66: 'teclado',67: 'celular',68: 'microondas',69: 'horno',70: 'tostadora',
+71: 'lavabo',72: 'refrigerador',73: 'libro',74: 'reloj',75: 'jarrón',76: 'tijeras',77: 'oso de peluche',78: 'secador de pelo',
+79: 'cepillo de dientes'}
+
 with st.sidebar:
-    option = st.selectbox(
+    lang_label = st.selectbox(
         'Select Label Languaje',
         ('English', 'Spanish'))
+
+if lang_label == ''English':
+    lenguaje = CLASS_NAMES_DICT
+else:
+    lenguaje = dict_esp
+
 
 def predict(frame):
     results = model(frame, conf=confi)
@@ -71,7 +88,7 @@ def plot_bboxes(results, frame):
                 class_id=results[0].boxes.cls.cpu().numpy().astype(int),
                 )
     # Format custom labels
-    labels = [f"{CLASS_NAMES_DICT[class_id]} {confidence:0.2f}"
+    labels = [f"{lenguaje[class_id]} {confidence:0.2f}"
     for _, confidence, class_id, tracker_id
     in detections]
     # Annotate and display frame
