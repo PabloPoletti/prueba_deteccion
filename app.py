@@ -134,7 +134,7 @@ webrtc_streamer(
 
 
 
-st.write("List of the 80 different classes that this pre-trained model detects")
+st.subheader("List of the 80 different classes that this pre-trained model detects")
 
 image = Image.open('Coco_Classes.png')
 
