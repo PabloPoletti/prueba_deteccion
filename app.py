@@ -10,6 +10,15 @@ from supervision.draw.color import ColorPalette
 from supervision.tools.detections import Detections, BoxAnnotator
 from PIL import Image
 
+hide_default_format = """
+       <style>
+       #MainMenu {visibility: hidden; }
+       footer {visibility: hidden;}
+       </style>
+       """
+st.markdown(hide_default_format, unsafe_allow_html=True)
+
+
 image = Image.open('Yolov8_banner.jpg')
 st.image(image)
 
