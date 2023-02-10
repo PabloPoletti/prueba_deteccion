@@ -10,6 +10,8 @@ from supervision.draw.color import ColorPalette
 from supervision.tools.detections import Detections, BoxAnnotator
 from PIL import Image
 
+image = Image.open('Yolov8_banner.jpg')
+st.image(image)
 
 st.title('Object Detection Example using YOLOv8 (80 Classes)')
 
