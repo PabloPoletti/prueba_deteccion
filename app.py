@@ -59,7 +59,7 @@ with st.sidebar:
         'Select Label Languaje',
         ('English', 'Spanish'))
 
-if lang_label == ''English':
+if lang_label == 'English':
     lenguaje = CLASS_NAMES_DICT
 else:
     lenguaje = dict_esp
