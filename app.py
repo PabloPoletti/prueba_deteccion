@@ -13,7 +13,7 @@ from PIL import Image
 image = Image.open('Yolov8_banner.jpg')
 st.image(image)
 
-st.title('Object Detection Example using YOLOv8 (80 Classes)')
+st.header('Object Detection Example using YOLOv8 (80 Classes)')
 
 
 st.sidebar.title("Configurations")
