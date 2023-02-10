@@ -1,8 +1,8 @@
 # YOLOv8_object_detection_streamlit
 
 ### Deploy your Object Detection app in Streamlit using YOLOv8 model (COCO dataset).
-#### Check the DEMO here: https://pablopoletti-prueba-deteccion-app-ojnaio.streamlit.app
-<a href="https://github.com/mariotsato/YOLOv8_object_detection_streamlit" class="image fit"><img src="images/obj_detection.png" alt=""></a>
+#### Check the DEMO here: https://pablopoletti-object-detection.streamlit.app/
+
 
 ### References:
 - <a href="https://github.com/niconielsen32/YOLOv8-Class">niconielsen32/YOLOv8-Class</a>
