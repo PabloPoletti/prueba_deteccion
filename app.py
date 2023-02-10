@@ -8,6 +8,7 @@ from time import time
 from ultralytics import YOLO
 from supervision.draw.color import ColorPalette
 from supervision.tools.detections import Detections, BoxAnnotator
+from PIL import Image
 
 
 st.title('Object Detection Example using YOLOv8 (80 Classes)')
@@ -124,3 +125,7 @@ webrtc_streamer(
 #st.table(clases)
 
 #st.write("The full github code is [here](https://github.com/PabloPoletti/prueba_deteccion)")
+
+image = Image.open('Coco_Classes.png')
+
+st.image(image, caption='COCO Classes')
