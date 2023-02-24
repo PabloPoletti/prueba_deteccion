@@ -68,7 +68,7 @@ dict_esp = {0: 'persona',1: 'bicicleta',2: 'coche',3: 'motocicleta',4: 'avión',
 
 with st.sidebar:
     lang_label = st.selectbox(
-        'Select Label Languaje',
+        'Select Label Language',
         ('English', 'Spanish'))
 
 if lang_label == 'English':
